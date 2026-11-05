@@ -1,0 +1,55 @@
+@if (tableData && tableData.length > 0) {
+  <p-table [value]="tableData" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template #header>
+      <tr>
+        <th *ngIf="templates['actions']">Procedures</th>
+
+        <th *ngFor="let col of bodytabel" [pSortableColumn]="col.value">
+          {{ col.key }}
+          <svg-icon
+            [svgStyle]="{ 'width.px': 18, 'height.px': 18 }"
+            src="/Icons/basil--sort-solid.svg"
+          ></svg-icon>
+        </th>
+      </tr>
+    </ng-template>
+
+    <ng-template #body let-row>
+      <tr>
+        <td *ngIf="templates['actions']">
+          <ng-container
+            *ngTemplateOutlet="templates['actions']; context: { $implicit: row }"
+          ></ng-container>
+        </td>
+
+        <td *ngFor="let col of bodytabel">
+          <ng-container *ngIf="col.type === 'template' && templates[col.value]; else normalCell">
+            <ng-container
+              *ngTemplateOutlet="templates[col.value]; context: { $implicit: row }"
+            ></ng-container>
+          </ng-container>
+
+          <ng-template #normalCell>
+            <ng-container *ngIf="col.type === 'date'; else standardCell">
+              {{ row[col.value] | date: col.format || 'dd/MM/yyyy' }}
+            </ng-container>
+            <ng-template #standardCell>
+              {{ row[col.value] || '_' }}
+            </ng-template>
+          </ng-template>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+} @else {
+  <app-no-data></app-no-data>
+}
+
+<p-paginator
+  (onPageChange)="onPageChange($event)"
+  [first]="first"
+  [rows]="rows"
+  [totalRecords]="totalRecords"
+  [rowsPerPageOptions]="[10, 20, 30]"
+/>
+===============================================================================================
