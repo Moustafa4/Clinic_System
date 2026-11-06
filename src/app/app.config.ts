@@ -20,6 +20,8 @@ export const appConfig: ApplicationConfig = {
         },
       },
       ripple: true,
+      license:
+        'eyJpZCI6ImY2MzBhNjJlLTZlMTUtNDYyYi1iZTk0LTcwMGRlZWZiZGY5OSIsInByb2R1Y3QiOiJwcmltZXVpIiwidGllciI6ImNvbW11bml0eSIsInR5cGUiOiJkZXYiLCJpYXQiOjE3ODUxNDg1NjgsImV4cCI6MTgxNjY4NDU2OH0.R71btZKUmWQPu2UkkUbd8Nf5qu5wxQ5jumRL-0nn4vw1ikW1o97hYZ0hEPxuPKkKUcoeHb_FvOvveEzfy_YnDQ',
     }),
   ],
 };
