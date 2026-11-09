@@ -1,1 +1,173 @@
-<p>landing-page works!</p>
+<!-- Landing Page Content -->
+<div class="container-fluid hero_Section" dir="rtl">
+  <app-header></app-header>
+  <div class="row align-items-center">
+    <div class="col-12 col-md-6 right order-2 order-md-1">
+      <div class="img_container">
+        <img src="/img/landing_page/d.png" alt="" />
+      </div>
+    </div>
+    <div class="col-12 col-md-6 left order-1 order-md-2">
+      <p>رعايتك الصحية ... اولويتنا</p>
+      <h2>عيادة متكاملة</h2>
+      <h1>لصحة أفضل لحياة أجمل</h1>
+      <p>نقدم لك رعاية طبية متكاملة بأعلي معابير الجودة</p>
+      <p>مع فريق من الأطباء المتخصصين وأحدت التقنيات الطبية</p>
+      <div class="Btn d-flex justify-content-center align-items-center">
+        <button>احجز موعدك الان</button>
+        <button>تعرف علي خدماتنا</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Our Services -->
+<div class="container-fluid service_section" dir="rtl">
+  <h3>خدماتنا الطبية</h3>
+  <p>مجموعة شامله من الخدمات الطبية المتكاملة</p>
+  <div class="row g-3 justify-content-center">
+    @for (i of Service; track $index) {
+      <div class="coll col-6 col-sm-4 col-md-3 col-lg-2">
+        <div class="service-card">
+          <svg-icon [src]="i.img"></svg-icon>
+          <p>{{ i.Servicename }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</div>
+
+<!-- About Us -->
+<div class="container-fluid about_section" dir="rtl">
+  <h3>عن العيادة</h3>
+  <div class="row align-items-stretch">
+    <div class="col-12 col-md-4 col-lg-3 about_right">
+      <div class="icon_container">
+        <svg-icon src="/icons/landing_icons/shield.svg"></svg-icon>
+        <h4>جودة طبية عالية</h4>
+      </div>
+      <div class="icon_container">
+        <svg-icon src="/icons/landing_icons/clock.svg"></svg-icon>
+        <h4>مواعيد مرنة</h4>
+      </div>
+      <div class="icon_container">
+        <svg-icon src="/icons/landing_icons/headphone.svg"></svg-icon>
+        <h4>دعم ومتابعة مستمرة</h4>
+      </div>
+    </div>
+    <div class="col-12 col-md-8 col-lg-9 about_left">
+      <div class="row w-100 align-items-center g-3">
+        <div class="col-12 col-md-6 about_text">
+          <h3>نحن هنا لنعتني بك وبعائلتك</h3>
+          <p>
+            عيادتنا منشأة طبية متكاملة تقدم خدمات الرعاية الصحية بأعلى مستوى من الجودة. مع فريق طبي
+            متخصص وتقنيات حديثة. لضمان أفضل تجربة علاجية لك ولعائلتك.
+          </p>
+          <button type="button" class="about_btn">اعرف المزيد</button>
+        </div>
+        <div class="col-12 col-md-6 col-img">
+          <div class="img-con"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Doctors -->
+<div class="container-fluid Doctor_section" dir="rtl">
+  <h3>فريقنا الطبي المتميز</h3>
+  <p class="info">نخبة من الأطباء المتخصصين في مختلف المجالات الطبية</p>
+
+  <div class="row g-3 justify-content-center align-items-stretch">
+    <!-- ✅ trust card أول عشان يظهر يمين في RTL -->
+    <div class="col-6 col-sm-4 col-md-2 doc-col">
+      <div class="Doc-container trust-card">
+        <div class="trust-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="70"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="white"
+            stroke-width="1.2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682
+                 a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318
+                 a4.5 4.5 0 00-6.364 0z"
+            />
+            <polyline
+              points="2,12 5,12 7,8 9,16 11,12 13,12"
+              stroke="white"
+              stroke-width="1"
+              fill="none"
+            />
+          </svg>
+        </div>
+        <h4>صحتك في أيد أمينة</h4>
+        <p>مع فريقنا الطبي المتخصص</p>
+      </div>
+    </div>
+
+    <!-- الدكاترة -->
+    @for (i of doctor; track $index) {
+      <div class="col-6 col-sm-4 col-md-2 doc-col">
+        <div class="Doc-container">
+          <div class="img_Doc">
+            <img [src]="i.img" alt="{{ i.name }}" />
+          </div>
+          <div class="doc-info">
+            <div class="doc-name">
+              <span class="arrow-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="#00b0d9"
+                  stroke-width="2.5"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+              </span>
+              <h4>{{ i.name }}</h4>
+            </div>
+            <p>{{ i.patch }}</p>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
+
+<!-- Reviews -->
+<div class="container-fluid reviews_section" dir="rtl">
+  <h3>ماذا يقول عملاؤنا؟</h3>
+  <div class="row g-4">
+    @for (review of reviews; track $index) {
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="review-card">
+          <span class="quote-icon">❝</span>
+          <p class="review-text">{{ review.text }}</p>
+          <div class="reviewer">
+            <div class="reviewer-info">
+              <div class="stars">
+                @for (s of [1, 2, 3, 4, 5]; track s) {
+                  <span [class.active]="s <= review.stars">★</span>
+                }
+              </div>
+              <h5>{{ review.name }}</h5>
+            </div>
+            <div class="reviewer-img">
+              <img [src]="review.img" [alt]="review.name" />
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

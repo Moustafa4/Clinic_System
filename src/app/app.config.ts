@@ -2,8 +2,9 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/
 
 import { provideRouter } from '@angular/router';
 import { providePrimeNG } from 'primeng/config';
-import Aura from '@primeuix/themes/aura';
+import { provideAngularSvgIcon } from 'angular-svg-icon';
 
+import Aura from '@primeuix/themes/aura';
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
@@ -11,6 +12,8 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
 
     provideRouter(routes),
+
+    provideAngularSvgIcon(),
 
     providePrimeNG({
       theme: {

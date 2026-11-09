@@ -1,0 +1,21 @@
+<div class="wave-decoration">
+  <svg viewBox="0 0 700 280" preserveAspectRatio="none">
+    <path
+      d="M0 30 C180 100 220 230 420 210 C540 200 620 120 700 100 L700 280 L0 280Z"
+      fill="#8CCDF2"
+      opacity=".35"
+    />
+
+    <path
+      d="M0 100 C150 160 240 270 420 240 C540 220 620 150 700 130 L700 280 L0 280Z"
+      fill="#35A9E0"
+      opacity=".4"
+    />
+
+    <path
+      d="M0 170 C180 220 270 280 450 260 C560 245 640 190 700 170 L700 280 L0 280Z"
+      fill="#0788C4"
+      opacity=".65"
+    />
+  </svg>
+</div>

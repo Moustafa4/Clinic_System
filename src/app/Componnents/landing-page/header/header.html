@@ -1,0 +1,53 @@
+<header class="main-header">
+  <div class="header-container">
+    <!-- Logo -->
+    <a href="#home" class="navbar-brand">
+      <span class="brand-icon">
+        <i class="pi pi-heart-fill"></i>
+      </span>
+
+      <span class="brand-text">
+        <strong>HealthCare</strong>
+        <small>Clinic</small>
+      </span>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="navbar-menu" [class.open]="menuOpen">
+      <a href="#home" class="nav-link active" (click)="menuOpen = false"> الرئيسية </a>
+
+      <a href="#services" class="nav-link" (click)="menuOpen = false"> الخدمات </a>
+
+      <a href="#doctors" class="nav-link" (click)="menuOpen = false"> الأطباء </a>
+
+      <a href="#about" class="nav-link" (click)="menuOpen = false"> عن العيادة </a>
+
+      <a href="#location" class="nav-link" (click)="menuOpen = false"> المدونة </a>
+
+      <a href="#contact" class="nav-link" (click)="menuOpen = false"> تواصل معنا </a>
+
+      <!-- Mobile Booking -->
+      <a href="#booking" class="booking-btn mobile-booking">
+        احجز موعدك
+        <i class="pi pi-calendar"></i>
+      </a>
+    </nav>
+
+    <!-- Desktop Booking -->
+    <a href="#booking" class="booking-btn desktop-booking">
+      احجز موعدك
+      <i class="pi pi-calendar"></i>
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button
+      class="menu-toggle"
+      type="button"
+      (click)="menuOpen = !menuOpen"
+      [attr.aria-expanded]="menuOpen"
+      aria-label="فتح القائمة"
+    >
+      <i [class]="menuOpen ? 'pi pi-times' : 'pi pi-bars'"></i>
+    </button>
+  </div>
+</header>
