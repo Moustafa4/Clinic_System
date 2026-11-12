@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { LandingPage } from './Componnents/landing-page/landing-page';
 import { Header } from './Componnents/landing-page/header/header';
 import { Footer } from './Componnents/footer/footer';
-import { Login } from './core/Auth/login/login';
+import { Login } from './Module/Auth/login/login';
 
 @Component({
   selector: 'app-root',

@@ -1,11 +1,14 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { inject, Service } from '@angular/core';
+import { inject, Injectable, Service } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environments';
 
-@Service()
+@Injectable({
+  providedIn: 'root',
+})
 export class Data {
   private http = inject(HttpClient);
-  private baseUrl = 'https://api.example.com/';
+  private baseUrl = environment.api_base_url;
 
   // ==============================================Get Methode==============================================
 

@@ -1,0 +1,703 @@
+:host {
+  display: block;
+  font-family: 'Almarai', sans-serif;
+}
+
+/* ========================= Login Page ========================= */
+
+.login-page {
+  min-height: 100dvh;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(0, 30, 60, 0.08), rgba(0, 30, 60, 0.08)),
+    url('/img/login/bg.png') center center / cover no-repeat;
+}
+
+.container-fluid {
+  min-height: 100dvh;
+  padding: 30px 3%;
+  position: relative;
+}
+
+.login-content {
+  min-height: calc(100dvh - 60px);
+  align-items: center;
+  margin: 0;
+}
+
+/* =========================Welcome Section - Right========================= */
+
+.midel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 30px 15px;
+}
+
+.welcome-section {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #0b3155;
+
+  .img_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+
+    img {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  h1 {
+    direction: ltr;
+    font-size: clamp(28px, 2.5vw, 40px);
+    font-weight: 800;
+    color: #0b3155;
+    margin: 0 0 35px;
+    letter-spacing: -1px;
+  }
+
+  h2 {
+    font-size: clamp(30px, 3vw, 44px);
+    font-weight: 800;
+    line-height: 1.5;
+    color: #0b3155;
+    margin: 0 0 10px;
+    white-space: nowrap;
+  }
+
+  p {
+    font-size: clamp(17px, 1.6vw, 23px);
+    font-weight: 600;
+    color: #123b60;
+    margin: 0;
+    line-height: 1.7;
+  }
+}
+
+/* =========================Welcome Underline========================= */
+
+.welcome-underline {
+  width: 150px;
+  height: 12px;
+  border-top: 5px solid #08a8ca;
+  border-radius: 50%;
+  transform: rotate(-7deg);
+  margin-top: 12px;
+}
+
+/* =========================Features========================= */
+
+.features {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.feature-item {
+  min-width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #0b3155;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.feature-icon {
+  width: 62px;
+  height: 62px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.78);
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(10, 80, 120, 0.06);
+  color: #0788c4;
+
+  i {
+    font-size: 29px;
+  }
+}
+
+/* =========================Login Form - Center========================= */
+
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+  padding: 15px 20px;
+}
+
+.Form_Container {
+  width: 100%;
+  max-width: 680px;
+  padding: 40px 45px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 32px;
+  box-shadow: 0 15px 45px rgba(10, 50, 90, 0.15);
+  text-align: center;
+
+  h2 {
+    color: #0b3155;
+    font-size: 30px;
+    font-weight: 800;
+    margin: 10px 0;
+  }
+}
+
+.form-description {
+  color: #788293;
+  font-size: 16px;
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+/* Form Icon */
+
+.icon_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  i {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 42px;
+    margin: 0 auto 10px;
+    background: #deeffb;
+    border-radius: 50%;
+    color: #046ca7;
+  }
+}
+
+/* Input Fields */
+
+.input-box {
+  width: 100%;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0 22px;
+  margin-bottom: 19px;
+  background: #fff;
+  border: 1px solid #dce7f2;
+  border-radius: 18px;
+  box-shadow: 0 3px 10px rgba(20, 67, 103, 0.06);
+  transition: 0.3s;
+
+  &:focus-within {
+    border-color: #079ac5;
+    box-shadow: 0 0 0 3px rgba(0, 166, 210, 0.08);
+  }
+
+  i {
+    color: #0b4777;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+
+  input {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 16px;
+    color: #123b60;
+    text-align: right;
+
+    &::placeholder {
+      color: #929baa;
+    }
+  }
+}
+
+.error-message {
+  display: block;
+  color: #dc3545;
+  text-align: right;
+  font-size: 12px;
+  margin: -10px 10px 12px;
+}
+
+/* Form Options */
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin: 22px 5px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #263c56;
+  font-size: 14px;
+  cursor: pointer;
+
+  input {
+    width: 18px;
+    height: 18px;
+    accent-color: #079ac5;
+  }
+}
+
+.forgot-password {
+  color: #0098ca;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+
+  &:hover {
+    color: #086da8;
+  }
+}
+
+/* Login Button */
+
+.login-btn {
+  width: 100%;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background: linear-gradient(100deg, #08a8ca, #086da8);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 130, 181, 0.23);
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 9px 20px rgba(0, 130, 181, 0.3);
+  }
+
+  i {
+    font-size: 14px;
+  }
+}
+
+/* Divider */
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 22px 0;
+
+  span {
+    flex: 1;
+    height: 1px;
+    background: #e1eaf2;
+  }
+
+  p {
+    margin: 0;
+    color: #153b5f;
+    font-weight: 700;
+  }
+}
+
+/* Social Buttons */
+
+.social-btn {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  background: transparent;
+  border: 1px solid #dce7f2;
+  border-radius: 16px;
+  margin-bottom: 10px;
+  color: #142d4b;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+
+  img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+
+  i {
+    font-size: 22px;
+    color: #000;
+  }
+
+  &:hover {
+    background: #f0f8fc;
+    border-color: #079ac5;
+  }
+}
+
+/* Register */
+
+.register-text {
+  margin-top: 18px;
+  color: #56657a;
+  font-size: 14px;
+
+  a {
+    color: #009acb;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* =========================Doctor Section - Left========================= */
+
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  overflow: hidden;
+}
+
+.doc-section {
+  width: 100%;
+  height: calc(100dvh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.doc-section .img_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.doc-section .img_container img {
+  width: 962px;
+  height: 693px;
+  object-fit: fill;
+  object-position: bottom center;
+  display: block;
+}
+
+/* =========================
+   Large Screens
+========================= */
+
+@media (min-width: 1400px) {
+  .container-fluid {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .doc-section {
+    height: 663px;
+  }
+
+  .Form_Container {
+    max-width: 700px;
+    padding: 42px 50px;
+  }
+}
+
+/* =========================
+   Tablet & Small Desktop
+========================= */
+
+@media (max-width: 1199px) {
+  .container-fluid {
+    padding: 25px 2%;
+  }
+
+  .welcome-section {
+    .img_container img {
+      width: 90px;
+      height: 90px;
+    }
+
+    h1 {
+      font-size: 29px;
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      font-size: 32px;
+      white-space: normal;
+    }
+
+    p {
+      font-size: 17px;
+    }
+  }
+
+  .features {
+    gap: 12px;
+  }
+
+  .feature-item {
+    min-width: 75px;
+    font-size: 12px;
+  }
+
+  .feature-icon {
+    width: 55px;
+    height: 55px;
+
+    i {
+      font-size: 25px;
+    }
+  }
+
+  .Form_Container {
+    padding: 30px 25px;
+
+    h2 {
+      font-size: 27px;
+    }
+  }
+
+  .icon_form i {
+    width: 85px;
+    height: 85px;
+    font-size: 35px;
+  }
+
+  .doc-section {
+    height: 75dvh;
+  }
+}
+
+/* =========================
+   Small Tablet
+========================= */
+
+@media (max-width: 991px) {
+  .login-content {
+    min-height: auto;
+  }
+
+  /* Welcome 5 columns, Form 7 columns */
+  .midel {
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+  }
+
+  .right {
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+    padding: 15px 12px;
+  }
+
+  .left {
+    display: none;
+  }
+
+  .Form_Container {
+    max-width: 100%;
+    padding: 30px 22px;
+  }
+
+  .welcome-section h1 {
+    font-size: 27px;
+  }
+
+  .welcome-section h2 {
+    font-size: 29px;
+    white-space: normal;
+  }
+
+  .features {
+    flex-wrap: wrap;
+  }
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 767px) {
+  .login-page {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .container-fluid {
+    min-height: 100dvh;
+    padding: 25px 15px;
+  }
+
+  .login-content {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left {
+    display: none;
+  }
+
+  .midel,
+  .right {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .midel {
+    order: 1;
+    padding: 15px 10px 25px;
+  }
+
+  .right {
+    order: 2;
+    padding: 10px 0 25px;
+  }
+
+  .welcome-section {
+    .img_container img {
+      width: 85px;
+      height: 85px;
+    }
+
+    h1 {
+      font-size: 27px;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: 27px;
+      white-space: normal;
+    }
+
+    p {
+      font-size: 15px;
+    }
+  }
+
+  .welcome-underline {
+    width: 110px;
+  }
+
+  .features {
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .feature-item {
+    min-width: 70px;
+    font-size: 11px;
+  }
+
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+
+    i {
+      font-size: 22px;
+    }
+  }
+
+  .Form_Container {
+    max-width: 520px;
+    padding: 28px 22px;
+    border-radius: 25px;
+
+    h2 {
+      font-size: 25px;
+    }
+  }
+
+  .icon_form i {
+    width: 75px;
+    height: 75px;
+    font-size: 32px;
+  }
+
+  .input-box {
+    height: 55px;
+    padding: 0 15px;
+  }
+
+  .login-btn {
+    height: 52px;
+    font-size: 16px;
+  }
+}
+
+/* =========================
+   Small Mobile
+========================= */
+
+@media (max-width: 400px) {
+  .Form_Container {
+    padding: 22px 16px;
+  }
+
+  .form-options {
+    font-size: 12px;
+  }
+
+  .forgot-password,
+  .remember-me {
+    font-size: 12px;
+  }
+
+  .features {
+    gap: 8px;
+  }
+
+  .feature-item {
+    min-width: 65px;
+  }
+}

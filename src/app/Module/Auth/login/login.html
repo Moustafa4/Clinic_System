@@ -1,0 +1,140 @@
+<div class="login-page" dir="rtl">
+  <div class="container-fluid">
+    <div class="row login-content">
+      <!-- Welcome Section - Right -->
+      <div class="col-lg-4 col-md-5 col-12 midel">
+        <div class="welcome-section">
+          <div class="img_container">
+            <img src="/img/login/logo.png" alt="HealthCare Clinic" />
+          </div>
+
+          <h1>HealthCare Clinic</h1>
+          <h2>مرحباً بك مجدداً</h2>
+          <p>معاً نحو صحة أفضل لحياة أجمل</p>
+
+          <div class="welcome-underline"></div>
+
+          <div class="features">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="pi pi-shield"></i>
+              </div>
+              <span>رعاية طبية<br />متكاملة</span>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="pi pi-users"></i>
+              </div>
+              <span>فريق طبي<br />متخصص</span>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="pi pi-heart-fill"></i>
+              </div>
+              <span>خدمات صحية<br />بأعلى جودة</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Login Form - Center -->
+      <div class="col-lg-4 col-md-7 col-12 right">
+        <div class="Form_Container">
+          <div class="icon_form">
+            <i class="pi pi-lock"></i>
+          </div>
+
+          <h2>تسجيل الدخول</h2>
+          <p class="form-description">مرحباً بك، يرجى إدخال بياناتك لتسجيل الدخول</p>
+
+          <form [formGroup]="Form" (ngSubmit)="submit()">
+            <div class="input-box">
+              <i class="pi pi-user"></i>
+              <input
+                type="email"
+                placeholder="البريد الإلكتروني"
+                formControlName="Email"
+                autocomplete="email"
+              />
+            </div>
+
+            <small
+              class="error-message"
+              *ngIf="Form.get('Email')?.invalid && Form.get('Email')?.touched"
+            >
+              يرجى إدخال بريد إلكتروني صحيح
+            </small>
+
+            <div class="input-box">
+              <i class="pi pi-lock"></i>
+              <input
+                type="password"
+                placeholder="كلمة المرور"
+                formControlName="Password"
+                autocomplete="current-password"
+              />
+            </div>
+
+            <small
+              class="error-message"
+              *ngIf="Form.get('Password')?.invalid && Form.get('Password')?.touched"
+            >
+              كلمة المرور مطلوبة
+            </small>
+
+            <div class="form-options">
+              <a href="#" class="forgot-password">نسيت كلمة المرور؟</a>
+
+              <label class="remember-me">
+                <input type="checkbox" formControlName="RememberMe" />
+                <span>تذكرني</span>
+              </label>
+            </div>
+
+            <button type="submit" class="login-btn">
+              تسجيل الدخول
+              <i class="pi pi-chevron-left"></i>
+            </button>
+
+            <div class="divider">
+              <span></span>
+              <p>أو</p>
+              <span></span>
+            </div>
+
+            <button type="button" class="social-btn">
+              <img
+                src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+                alt="Google"
+              />
+              التسجيل باستخدام Google
+            </button>
+
+            <button type="button" class="social-btn">
+              <i class="pi pi-apple"></i>
+              التسجيل باستخدام Apple
+            </button>
+
+            <div class="register-text">
+              ليس لديك حساب؟
+              <a href="#">إنشاء حساب جديد</a>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!--  Left -->
+      <div class="col-lg-4 col-12 left">
+        <div class="doc-section">
+          <div class="img_container">
+            <img src="/img/login/doc.png" alt="Doctor" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wave"></div>
+  </div>
+</div>
