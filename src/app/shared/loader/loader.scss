@@ -1,0 +1,217 @@
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
+}
+
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-wrapper {
+  position: relative;
+
+  width: 100px;
+  height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   Outer Spinner
+========================= */
+
+.loader-spinner {
+  position: absolute;
+  inset: 0;
+
+  border: 4px solid #e5e7eb;
+  border-top-color: #2563eb;
+
+  border-radius: 50%;
+
+  animation: outerSpin 1s linear infinite;
+}
+
+/* =========================
+   Logo Parts Container
+========================= */
+
+.logo_part {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform-origin: center center;
+
+  animation: logoAnimation 5.5s infinite;
+}
+
+/* =========================
+   Back & Front Parts
+========================= */
+
+.back_part,
+.front_part {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 30px;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+/* =========================
+   Front Parts
+========================= */
+
+.front_part {
+  flex-flow: column;
+
+  position: absolute;
+  top: 50%;
+  right: 50%;
+
+  transform: translate(50%, -50%);
+
+  .part1 {
+    animation: showTop 5.5s infinite;
+  }
+
+  .part2 {
+    animation: showBottom 5.5s infinite;
+  }
+}
+
+/* =========================
+   Back Parts
+========================= */
+
+.back_part {
+  .part2 {
+    animation: showLeft 5.5s infinite;
+  }
+
+  .part1 {
+    animation: showRight 5.5s infinite;
+  }
+}
+
+/* =========================
+   Loading Text
+========================= */
+
+.loading-text {
+  color: #2563eb;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* =========================
+   Animation
+========================= */
+
+/* 1 - Top */
+
+@keyframes showTop {
+  0%,
+  3% {
+    opacity: 0;
+  }
+
+  5%,
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 2 - Left */
+
+@keyframes showLeft {
+  0%,
+  10% {
+    opacity: 0;
+  }
+
+  12%,
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 3 - Bottom */
+
+@keyframes showBottom {
+  0%,
+  17% {
+    opacity: 0;
+  }
+
+  19%,
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 4 - Right */
+
+@keyframes showRight {
+  0%,
+  24% {
+    opacity: 0;
+  }
+
+  26%,
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Logo Rotation */
+
+@keyframes logoAnimation {
+  0%,
+  26% {
+    transform: rotate(0deg);
+  }
+
+  48% {
+    transform: rotate(270deg);
+  }
+
+  60%,
+  85% {
+    transform: rotate(270deg);
+  }
+
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+/* Outer Circle Rotation */
+
+@keyframes outerSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}

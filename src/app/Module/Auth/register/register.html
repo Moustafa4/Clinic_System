@@ -1,1 +1,296 @@
-<p>register works!</p>
+<div class="login-page register-page" dir="rtl">
+  <div class="container-fluid">
+    <div class="row login-content">
+      <!-- Welcome Section - Center -->
+      <div class="col-lg-4 col-md-5 col-12 midel">
+        <div class="welcome-section">
+          <div class="img_container">
+            <img src="/img/login/logo.png" alt="HealthCare Clinic" />
+          </div>
+
+          <h1>كلينيكو</h1>
+          <h2>إنشاء حساب جديد</h2>
+          <p>لبداية رحلة صحية أفضل</p>
+
+          <div class="welcome-underline"></div>
+
+          <p class="welcome-description">
+            أنشئ حسابك الآن للاستفادة من جميع خدماتنا الطبية وإدارة مواعيدك وبياناتك الصحية بكل
+            سهولة وأمان
+          </p>
+
+          <div class="features">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="pi pi-calendar"></i>
+              </div>
+              <span>حجز المواعيد<br />بسهولة</span>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="pi pi-shield"></i>
+              </div>
+              <span>إدارة بياناتك الطبية<br />بأمان</span>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="pi pi-heart"></i>
+              </div>
+              <span>متابعة حالتك<br />الصحية</span>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="pi pi-comments"></i>
+              </div>
+              <span>تواصل مباشر<br />مع الأطباء</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Register Form - Right -->
+      <div class="col-lg-5 col-md-7 col-12 right">
+        <div class="Form_Container">
+          <div class="icon_form">
+            <i class="pi pi-user-plus"></i>
+          </div>
+
+          <h2>إنشاء حساب جديد</h2>
+          <p class="form-description">يرجى ملء البيانات لإنشاء حسابك</p>
+
+          <form [formGroup]="Form" (ngSubmit)="submit()">
+            <!-- Full Name & PhoneNumber -->
+            <div class="register-fields two-columns">
+              <div class="field-group">
+                <label for="Name">الاسم الكامل</label>
+                <div class="input-box">
+                  <i class="pi pi-user"></i>
+                  <input
+                    id="Name"
+                    type="text"
+                    placeholder="أدخل اسمك الكامل"
+                    formControlName="Name"
+                    autocomplete="name"
+                  />
+                </div>
+
+                <small
+                  class="error-message"
+                  *ngIf="Form.get('Name')?.invalid && Form.get('Name')?.touched"
+                >
+                  يرجى إدخال الاسم الكامل
+                </small>
+              </div>
+
+              <div class="field-group">
+                <label for="PhoneNumber">رقم الهاتف</label>
+                <div class="input-box">
+                  <i class="pi pi-PhoneNumber"></i>
+                  <input
+                    id="PhoneNumber"
+                    type="tel"
+                    placeholder="05xxxxxxxx"
+                    formControlName="PhoneNumber"
+                    autocomplete="tel"
+                  />
+                </div>
+
+                <small
+                  class="error-message"
+                  *ngIf="Form.get('PhoneNumber')?.invalid && Form.get('PhoneNumber')?.touched"
+                >
+                  يرجى إدخال رقم الهاتف
+                </small>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="field-group">
+              <label for="Email">البريد الإلكتروني</label>
+              <div class="input-box">
+                <i class="pi pi-envelope"></i>
+                <input
+                  id="Email"
+                  type="email"
+                  placeholder="أدخل بريدك الإلكتروني"
+                  formControlName="Email"
+                  autocomplete="email"
+                />
+              </div>
+
+              <small
+                class="error-message"
+                *ngIf="Form.get('Email')?.invalid && Form.get('Email')?.touched"
+              >
+                يرجى إدخال بريد إلكتروني صحيح
+              </small>
+            </div>
+
+            <!-- Gender & Birth Date -->
+            <div class="register-fields two-columns">
+              <div class="field-group">
+                <label for="Gender">الجنس</label>
+                <div class="input-box">
+                  <i class="pi pi-users"></i>
+                  <select id="Gender" formControlName="Gender">
+                    <option value="" disabled>اختر الجنس</option>
+                    <option value="Male">ذكر</option>
+                    <option value="Female">أنثى</option>
+                  </select>
+                </div>
+
+                <small
+                  class="error-message"
+                  *ngIf="Form.get('Gender')?.invalid && Form.get('Gender')?.touched"
+                >
+                  يرجى اختيار الجنس
+                </small>
+              </div>
+
+              <div class="field-group">
+                <label for="BirthDate">تاريخ الميلاد</label>
+                <div class="input-box">
+                  <i class="pi pi-calendar"></i>
+                  <input
+                    id="BirthDate"
+                    type="date"
+                    formControlName="BirthDate"
+                    autocomplete="bday"
+                  />
+                </div>
+
+                <small
+                  class="error-message"
+                  *ngIf="Form.get('BirthDate')?.invalid && Form.get('BirthDate')?.touched"
+                >
+                  يرجى اختيار تاريخ الميلاد
+                </small>
+              </div>
+            </div>
+
+            <!-- Password & Confirm Password -->
+            <div class="register-fields two-columns">
+              <div class="field-group">
+                <label for="Password">كلمة المرور</label>
+                <div class="input-box">
+                  <i class="pi pi-lock"></i>
+                  <input
+                    id="Password"
+                    type="password"
+                    placeholder="أدخل كلمة المرور"
+                    formControlName="Password"
+                    autocomplete="new-password"
+                  />
+                </div>
+
+                <small
+                  class="error-message"
+                  *ngIf="Form.get('Password')?.invalid && Form.get('Password')?.touched"
+                >
+                  كلمة المرور مطلوبة (8 أحرف على الأقل)
+                </small>
+              </div>
+
+              <div class="field-group">
+                <label for="ConfirmPassword">تأكيد كلمة المرور</label>
+                <div class="input-box">
+                  <i class="pi pi-eye-slash"></i>
+                  <input
+                    id="ConfirmPassword"
+                    type="password"
+                    placeholder="أعد إدخال كلمة المرور"
+                    formControlName="ConfirmPassword"
+                    autocomplete="new-password"
+                  />
+                </div>
+
+                <small
+                  class="error-message"
+                  *ngIf="Form.get('ConfirmPassword')?.touched && Form.errors?.['passwordMismatch']"
+                >
+                  كلمتا المرور غير متطابقتين
+                </small>
+              </div>
+            </div>
+
+            <!-- Terms -->
+            <div class="terms-row">
+              <label class="terms-checkbox">
+                <input type="checkbox" formControlName="AcceptTerms" />
+                <span>
+                  أوافق على
+                  <a routerLink="/terms">الشروط والأحكام</a>
+                  و
+                  <a routerLink="/privacy">سياسة الخصوصية</a>
+                </span>
+              </label>
+            </div>
+
+            <small
+              class="error-message"
+              *ngIf="Form.get('AcceptTerms')?.invalid && Form.get('AcceptTerms')?.touched"
+            >
+              يجب الموافقة على الشروط والأحكام
+            </small>
+
+            <!-- Submit -->
+            <button type="submit" class="login-btn">
+              إنشاء حساب
+              <i class="pi pi-user-plus"></i>
+            </button>
+
+            <div class="divider">
+              <span></span>
+              <p>أو</p>
+              <span></span>
+            </div>
+
+            <!-- Social Register -->
+            <div class="social-buttons">
+              <button type="button" class="social-btn">
+                <img
+                  src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+                  alt="Google"
+                />
+                التسجيل باستخدام Google
+              </button>
+
+              <button type="button" class="social-btn">
+                <i class="pi pi-apple"></i>
+                التسجيل باستخدام Apple
+              </button>
+            </div>
+
+            <!-- Login Link -->
+            <div class="register-text">
+              لديك حساب بالفعل؟
+              <button
+                type="button"
+                routerLink="/login"
+                [state]="{ role: selectedRole() }"
+                class="register-btn"
+              >
+                تسجيل الدخول
+                <i class="pi pi-sign-in"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Doctor Image - Left -->
+      <div class="col-lg-3 col-12 left">
+        <div class="doc-section">
+          <div class="img_container">
+            <img src="/img/login/doc.png" alt="Doctor" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wave"></div>
+  </div>
+</div>

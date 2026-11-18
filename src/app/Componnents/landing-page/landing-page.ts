@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { Header } from './header/header';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { Footer } from '../footer/footer';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [Header, AngularSvgIconModule],
+  imports: [Header, AngularSvgIconModule, Footer, RouterLink],
   selector: 'app-landing-page',
   styleUrl: './landing-page.scss',
   templateUrl: './landing-page.html',

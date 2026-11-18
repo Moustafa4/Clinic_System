@@ -1,0 +1,88 @@
+<div class="container-fluid" dir="rtl">
+  <div class="panel-wrapper">
+    <!-- Header -->
+    <div class="panel-header">
+      <div class="header-icon">
+        <i class="pi pi-heart-fill"></i>
+      </div>
+
+      <h1>مرحباً بك في نظام إدارة العيادة</h1>
+
+      <p>
+        نظامك المتكامل لإدارة الخدمات الطبية بسهولة وكفاءة. اختر نوع حسابك للمتابعة إلى مساحة العمل
+        الخاصة بك.
+      </p>
+    </div>
+
+    <!-- Roles -->
+    <div class="panel-Container">
+      @for (role of roles(); track role) {
+        <button
+          type="button"
+          class="role-card"
+          [class.active]="selectedRole() === role"
+          [attr.aria-pressed]="selectedRole() === role"
+          (click)="selectRole(role)"
+        >
+          @switch (role) {
+            @case ('Admin') {
+              <svg-icon class="role-icon" src="/icons/Panel/Admin.svg"> </svg-icon>
+              <span>الأدمن</span>
+            }
+            @case ('Doctor') {
+              <svg-icon class="role-icon" src="/icons/Panel/Doctor.svg"> </svg-icon>
+              <span>طبيب</span>
+            }
+            @case ('Patient') {
+              <svg-icon class="role-icon" src="/icons/Panel/Patient.svg"> </svg-icon>
+              <span>مريض</span>
+            }
+            @case ('Receptionist') {
+              <svg-icon class="role-icon" src="/icons/Panel/Receptionist.svg"> </svg-icon>
+              <span>موظف استقبال</span>
+            }
+            @default {
+              <span>{{ role }}</span>
+            }
+          }
+
+          @if (selectedRole() === role) {
+            <span class="selected-check">
+              <i class="pi pi-check"></i>
+            </span>
+          }
+        </button>
+      }
+    </div>
+
+    <!-- Login Action -->
+    <div class="panel-footer">
+      <div class="login-actions">
+        <button
+          type="button"
+          class="login-btn primary-btn"
+          [disabled]="!selectedRole()"
+          (click)="login()"
+        >
+          <i class="pi pi-sign-in"></i>
+          <span>تسجيل الدخول</span>
+        </button>
+
+        <button
+          type="button"
+          class="login-btn secondary-btn"
+          [disabled]="!selectedRole()"
+          (click)="register()"
+        >
+          <i class="pi pi-user-plus"></i>
+          <span>إنشاء حساب</span>
+        </button>
+      </div>
+
+      <p class="footer-note">
+        <i class="pi pi-shield"></i>
+        بياناتك محمية ويتم توجيهك حسب صلاحيات حسابك
+      </p>
+    </div>
+  </div>
+</div>

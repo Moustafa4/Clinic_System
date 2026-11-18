@@ -1,0 +1,38 @@
+@if (core._Sussess | async; as SuccessMessage) {
+  <div class="success-overlay">
+    <div
+      class="success-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="success-title"
+      dir="rtl"
+    >
+      <button type="button" class="close-btn" aria-label="إغلاق" (click)="closeModal()">
+        <i class="pi pi-times"></i>
+      </button>
+
+      <div class="success-icon-wrapper">
+        <div class="success-icon-circle">
+          <div class="success-icon-inner">
+            <svg viewBox="0 0 52 52" class="checkmark">
+              <path class="checkmark-path" fill="none" d="M14 27 L22 35 L39 17" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="success-content">
+        <h2 class="success-message">
+          {{ SuccessMessage }}
+        </h2>
+
+        <div class="success-info">
+          <i class="pi pi-info-circle"></i>
+          <span>يمكنك المتابعة</span>
+        </div>
+      </div>
+
+      <button type="button" class="success-submit-btn" (click)="closeModal()">حسناً</button>
+    </div>
+  </div>
+}

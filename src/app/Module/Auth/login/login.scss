@@ -377,22 +377,54 @@
 
 /* Register */
 
+/* Register */
 .register-text {
-  margin-top: 18px;
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+
   color: #56657a;
   font-size: 14px;
 
-  a {
+  .register-btn {
+    padding: 7px 14px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
     color: #009acb;
-    font-weight: 700;
-    text-decoration: none;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 800;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 14px;
+    }
 
     &:hover {
-      text-decoration: underline;
+      background: #eaf7fc;
+      border-color: #c8eaf5;
+      color: #086da8;
+      transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+      outline: 3px solid #079ac540;
+      outline-offset: 3px;
     }
   }
 }
-
 /* =========================Doctor Section - Left========================= */
 
 .left {
@@ -683,7 +715,15 @@
   .Form_Container {
     padding: 22px 16px;
   }
+  .register-text {
+    font-size: 12px;
+    gap: 4px;
 
+    .register-btn {
+      font-size: 12px;
+      padding: 6px 8px;
+    }
+  }
   .form-options {
     font-size: 12px;
   }

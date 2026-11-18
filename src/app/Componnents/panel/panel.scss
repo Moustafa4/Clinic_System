@@ -1,0 +1,277 @@
+.container-fluid {
+  min-height: 100dvh;
+  background: url('/img/login/bg.png') center / cover no-repeat;
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// Header
+.panel-header {
+  text-align: center;
+  max-width: 650px;
+  margin-bottom: 45px;
+
+  .header-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 18px;
+    background: #0d8a8e;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 28px;
+    box-shadow: 0 8px 20px #0d8a8e35;
+  }
+
+  h1 {
+    font-size: clamp(25px, 4vw, 34px);
+    font-weight: 800;
+    color: #263b4a;
+    margin-bottom: 14px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #667085;
+    margin: 0;
+  }
+}
+
+// Role Cards
+.panel-Container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.role-card {
+  position: relative;
+  width: 230px;
+  height: 230px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+
+  border: 2px solid transparent;
+  border-radius: 18px;
+  background: #fff;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  font-family: inherit;
+  font-size: 21px;
+  font-weight: 700;
+  color: #344054;
+
+  .role-icon {
+    width: 95px;
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px #0002;
+  }
+
+  &.active {
+    border-color: #0d8a8e;
+    background: #e5f5f5;
+    color: #0d8a8e;
+    box-shadow: 0 0 0 4px #0d8a8e20;
+    transform: translateY(-5px);
+  }
+
+  .selected-check {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 27px;
+    height: 27px;
+    background: #0d8a8e;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+  }
+}
+
+// Login Footer
+.panel-footer {
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.login-actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.login-btn {
+  width: 260px;
+  min-height: 58px;
+  padding: 0 22px;
+
+  border: 2px solid transparent;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  i {
+    font-size: 18px;
+  }
+
+  &:hover:not(:disabled) {
+    transform: translateY(-3px);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+// Primary
+.primary-btn {
+  background: #0d8a8e;
+  color: #fff;
+
+  &:hover:not(:disabled) {
+    background: #087477;
+    box-shadow: 0 8px 20px #0d8a8e35;
+  }
+}
+
+// Secondary
+.secondary-btn {
+  background: #fff;
+  color: #0d8a8e;
+  border-color: #0d8a8e;
+
+  &:hover:not(:disabled) {
+    background: #e5f5f5;
+    box-shadow: 0 8px 20px #0d8a8e20;
+  }
+}
+
+.footer-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #667085;
+  font-size: 13px;
+  margin: 0;
+
+  i {
+    color: #0d8a8e;
+  }
+}
+
+// Responsive
+@media (max-width: 576px) {
+  .login-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .login-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .footer-note {
+    font-size: 11px;
+    text-align: center;
+  }
+}
+
+// Responsive
+@media (max-width: 576px) {
+  .container-fluid {
+    padding: 30px 15px;
+  }
+
+  .panel-header {
+    margin-bottom: 30px;
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .panel-Container {
+    gap: 15px;
+  }
+
+  .role-card {
+    width: calc(50% - 10px);
+    height: 175px;
+    font-size: 17px;
+
+    .role-icon {
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+  .panel-footer {
+    margin-top: 30px;
+  }
+
+  .login-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .footer-note {
+    font-size: 11px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,896 @@
+:host {
+  display: block;
+  font-family: 'Almarai', sans-serif;
+}
+
+/* =========================
+   Register Page
+========================= */
+
+.login-page {
+  min-height: 100dvh;
+  overflow-x: hidden;
+  background:
+    linear-gradient(rgba(0, 30, 60, 0.08), rgba(0, 30, 60, 0.08)),
+    url('/img/login/bg.png') center center / cover no-repeat;
+}
+
+.container-fluid {
+  min-height: 100dvh;
+  padding: 30px 3%;
+  position: relative;
+}
+
+.login-content {
+  min-height: calc(100dvh - 60px);
+  align-items: center;
+  margin: 0;
+}
+
+/* =========================
+   Welcome Section
+========================= */
+
+.midel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 30px 15px;
+}
+
+.welcome-section {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #0b3155;
+
+  .img_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+
+    img {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+    }
+  }
+
+  h1 {
+    direction: ltr;
+    font-size: clamp(28px, 2.5vw, 40px);
+    font-weight: 800;
+    color: #0b3155;
+    margin: 0 0 25px;
+    letter-spacing: -1px;
+  }
+
+  h2 {
+    font-size: clamp(28px, 2.5vw, 40px);
+    font-weight: 800;
+    line-height: 1.5;
+    color: #0b3155;
+    margin: 0 0 8px;
+  }
+
+  p {
+    font-size: clamp(15px, 1.3vw, 19px);
+    font-weight: 600;
+    color: #123b60;
+    margin: 0;
+    line-height: 1.8;
+  }
+
+  .welcome-description {
+    max-width: 390px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 2;
+    margin-top: 12px;
+  }
+}
+
+/* =========================
+   Welcome Underline
+========================= */
+
+.welcome-underline {
+  width: 150px;
+  height: 12px;
+  border-top: 5px solid #08a8ca;
+  border-radius: 50%;
+  transform: rotate(-7deg);
+  margin-top: 12px;
+}
+
+/* =========================
+   Features
+========================= */
+
+.features {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: start;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.feature-item {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #0b3155;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.feature-icon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.78);
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(10, 80, 120, 0.06);
+  color: #0788c4;
+
+  i {
+    font-size: 26px;
+  }
+}
+
+/* =========================
+   Register Form
+========================= */
+
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+  padding: 15px 20px;
+}
+
+.Form_Container {
+  width: 100%;
+  max-width: 720px;
+  padding: 32px 38px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 32px;
+  box-shadow: 0 15px 45px rgba(10, 50, 90, 0.15);
+  text-align: center;
+
+  h2 {
+    color: #0b3155;
+    font-size: 28px;
+    font-weight: 800;
+    margin: 8px 0;
+  }
+}
+
+.form-description {
+  color: #788293;
+  font-size: 14px;
+  margin-bottom: 25px;
+  line-height: 1.7;
+}
+
+/* =========================
+   Form Icon
+========================= */
+
+.icon_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  i {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    margin: 0 auto 8px;
+    background: #deeffb;
+    border-radius: 50%;
+    color: #046ca7;
+  }
+}
+
+/* =========================
+   Form Fields
+========================= */
+
+.register-fields {
+  width: 100%;
+  display: grid;
+  gap: 0 18px;
+
+  &.two-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.field-group {
+  width: 100%;
+  min-width: 0;
+  text-align: right;
+  margin-bottom: 13px;
+
+  label {
+    display: block;
+    color: #173b5d;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 5px 8px;
+  }
+}
+
+/* =========================
+   Input Box
+========================= */
+
+.input-box {
+  width: 100%;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  margin-bottom: 0;
+  background: #fff;
+  border: 1px solid #dce7f2;
+  border-radius: 14px;
+  box-shadow: 0 3px 10px rgba(20, 67, 103, 0.05);
+  transition: 0.3s;
+
+  &:focus-within {
+    border-color: #079ac5;
+    box-shadow: 0 0 0 3px rgba(0, 166, 210, 0.08);
+  }
+
+  i {
+    color: #0b4777;
+    font-size: 19px;
+    flex-shrink: 0;
+  }
+
+  input,
+  select {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 13px;
+    color: #123b60;
+    text-align: right;
+  }
+
+  input::placeholder {
+    color: #929baa;
+  }
+
+  select {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 0;
+  }
+
+  select:invalid {
+    color: #929baa;
+  }
+
+  input[type='date'] {
+    direction: rtl;
+    cursor: pointer;
+    color: #123b60;
+  }
+
+  input[type='date']::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+}
+
+/* =========================
+   Validation
+========================= */
+
+.error-message {
+  display: block;
+  color: #dc3545;
+  text-align: right;
+  font-size: 11px;
+  margin: 6px 5px 0;
+}
+
+/* =========================
+   Terms & Conditions
+========================= */
+
+.terms-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px 3px 15px;
+}
+
+.terms-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #56657a;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1.8;
+
+  input {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+    accent-color: #079ac5;
+    cursor: pointer;
+  }
+
+  a {
+    color: #0098ca;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+      color: #086da8;
+      text-decoration: underline;
+    }
+  }
+}
+
+/* =========================
+   Register Button
+========================= */
+
+.login-btn {
+  width: 100%;
+  height: 53px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(100deg, #08a8ca, #086da8);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 130, 181, 0.23);
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 9px 20px rgba(0, 130, 181, 0.3);
+  }
+
+  i {
+    font-size: 15px;
+  }
+}
+
+/* =========================
+   Divider
+========================= */
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 17px 0;
+
+  span {
+    flex: 1;
+    height: 1px;
+    background: #e1eaf2;
+  }
+
+  p {
+    margin: 0;
+    color: #153b5f;
+    font-size: 13px;
+    font-weight: 700;
+  }
+}
+
+/* =========================
+   Social Buttons
+========================= */
+
+.social-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.social-btn {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  background: transparent;
+  border: 1px solid #dce7f2;
+  border-radius: 13px;
+  margin-bottom: 0;
+  color: #142d4b;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+
+  img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+  }
+
+  i {
+    font-size: 20px;
+    color: #000;
+  }
+
+  &:hover {
+    background: #f0f8fc;
+    border-color: #079ac5;
+  }
+}
+
+/* =========================
+   Login Link
+========================= */
+
+.register-text {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  color: #56657a;
+  font-size: 13px;
+
+  .register-btn {
+    padding: 5px 10px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    color: #009acb;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 13px;
+    }
+
+    &:hover {
+      background: #eaf7fc;
+      border-color: #c8eaf5;
+      color: #086da8;
+      transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+      outline: 3px solid #079ac540;
+      outline-offset: 3px;
+    }
+  }
+}
+
+/* =========================
+   Doctor Section
+========================= */
+
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  overflow: hidden;
+}
+
+.doc-section {
+  width: 100%;
+  height: calc(100dvh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.doc-section .img_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.doc-section .img_container img {
+  width: 962px;
+  height: 693px;
+  object-fit: fill;
+  object-position: bottom center;
+  display: block;
+  margin-inline-end: 125px;
+}
+
+/* =========================
+   Wave
+========================= */
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* =========================
+   Large Screens
+========================= */
+
+@media (min-width: 1400px) {
+  .container-fluid {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .Form_Container {
+    max-width: 760px;
+    padding: 5px 42px;
+  }
+
+  .doc-section {
+    height: 700px;
+  }
+}
+
+/* =========================
+   Tablet & Small Desktop
+========================= */
+
+@media (max-width: 1199px) {
+  .container-fluid {
+    padding: 25px 2%;
+  }
+
+  .midel {
+    padding: 20px 8px;
+  }
+
+  .welcome-section {
+    .img_container img {
+      width: 90px;
+      height: 90px;
+    }
+
+    h1 {
+      font-size: 29px;
+    }
+
+    h2 {
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+
+    .welcome-description {
+      font-size: 13px;
+    }
+  }
+
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .Form_Container {
+    padding: 5px 22px;
+
+    h2 {
+      font-size: 25px;
+    }
+  }
+
+  .input-box {
+    padding: 0 12px;
+    gap: 8px;
+
+    input,
+    select {
+      font-size: 12px;
+    }
+  }
+
+  .doc-section {
+    height: 75dvh;
+  }
+}
+
+/* =========================
+   Small Tablet
+========================= */
+
+@media (max-width: 991px) {
+  .login-content {
+    min-height: auto;
+  }
+
+  .midel {
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+  }
+
+  .right {
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+    padding: 15px 12px;
+  }
+
+  .left {
+    display: none;
+  }
+
+  .Form_Container {
+    max-width: 100%;
+    padding: 28px 20px;
+  }
+
+  .welcome-section h1 {
+    font-size: 26px;
+  }
+
+  .welcome-section h2 {
+    font-size: 25px;
+  }
+
+  .welcome-section .welcome-description {
+    font-size: 12px;
+  }
+
+  .features {
+    gap: 12px;
+  }
+
+  .social-buttons {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 767px) {
+  .login-page {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .container-fluid {
+    min-height: 100dvh;
+    padding: 20px 15px;
+  }
+
+  .login-content {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left {
+    display: none;
+  }
+
+  .midel,
+  .right {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .midel {
+    order: 1;
+    padding: 10px 10px 20px;
+  }
+
+  .right {
+    order: 2;
+    padding: 10px 0 25px;
+  }
+
+  .welcome-section {
+    .img_container img {
+      width: 75px;
+      height: 75px;
+    }
+
+    h1 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    .welcome-description {
+      max-width: 450px;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+  }
+
+  .welcome-underline {
+    width: 110px;
+  }
+
+  .features {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .feature-item {
+    font-size: 10px;
+  }
+
+  .feature-icon {
+    width: 43px;
+    height: 43px;
+
+    i {
+      font-size: 20px;
+    }
+  }
+
+  .Form_Container {
+    max-width: 520px;
+    padding: 25px 20px;
+    border-radius: 25px;
+
+    h2 {
+      font-size: 23px;
+    }
+  }
+
+  .icon_form i {
+    width: 65px;
+    height: 65px;
+    font-size: 29px;
+  }
+
+  .form-description {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .register-fields.two-columns {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .field-group {
+    margin-bottom: 13px;
+  }
+
+  .field-group label {
+    font-size: 13px;
+  }
+
+  .input-box {
+    height: 50px;
+  }
+
+  .social-buttons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .social-btn {
+    font-size: 11px;
+    gap: 5px;
+  }
+
+  .terms-checkbox {
+    font-size: 11px;
+  }
+
+  .login-btn {
+    height: 50px;
+    font-size: 15px;
+  }
+}
+
+/* =========================
+   Small Mobile
+========================= */
+
+@media (max-width: 400px) {
+  .Form_Container {
+    padding: 5px 15px;
+  }
+
+  .features {
+    gap: 5px;
+  }
+
+  .feature-item {
+    font-size: 9px;
+  }
+
+  .feature-icon {
+    width: 39px;
+    height: 39px;
+
+    i {
+      font-size: 18px;
+    }
+  }
+
+  .social-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .register-text {
+    font-size: 11px;
+    gap: 3px;
+
+    .register-btn {
+      font-size: 11px;
+      padding: 5px 7px;
+    }
+  }
+}
