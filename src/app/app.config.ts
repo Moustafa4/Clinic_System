@@ -7,8 +7,9 @@ import { provideAngularSvgIcon } from 'angular-svg-icon';
 import Aura from '@primeuix/themes/aura';
 import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
-import { loadingSpinnerInterceptor } from './core/Interceptors/loading-spinner-interceptor';
-import { successInterceptor } from './core/Interceptors/sussess-interceptor';
+import { loadingSpinnerInterceptor } from './core/Interceptors/loading-spinner.interceptor';
+import { successInterceptor } from './core/Interceptors/sussess.interceptor';
+import { authInterceptor } from './core/Interceptors/auth.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,7 +18,9 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
 
     provideAngularSvgIcon(),
-    provideHttpClient(withInterceptors([loadingSpinnerInterceptor, successInterceptor])),
+    provideHttpClient(
+      withInterceptors([loadingSpinnerInterceptor, successInterceptor, authInterceptor]),
+    ),
 
     providePrimeNG({
       theme: {

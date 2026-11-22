@@ -1,0 +1,26 @@
+.brand {
+  //   margin-inline-start: 50px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.sidebar-header:has(.toggle-btn[aria-expanded='false']) {
+  text-align: center;
+
+  .brand .brand-name {
+    display: none;
+  }
+  .brand {
+    text-align: center;
+  }
+  .toggle-btn {
+    margin-block-start: 5px;
+  }
+}
+.nav-link {
+  font-size: 16px;
+  font-weight: bold;
+  margin-block-end: 30px;
+}

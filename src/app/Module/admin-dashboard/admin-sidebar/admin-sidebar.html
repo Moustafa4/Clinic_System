@@ -1,0 +1,106 @@
+<div class="admin-sidebar" dir="rtl">
+  <p-sidebar-layout class="sidebar-layout">
+    @if (isMobile() && open()) {
+      <p-sidebar-backdrop class="absolute!" />
+    }
+
+    <p-sidebar
+      id="preview"
+      [collapsible]="isMobile() ? 'offcanvas' : 'icon'"
+      [overlay]="isMobile()"
+      [open]="open()"
+      (openChange)="open.set($event)"
+    >
+      <p-sidebar-spacer />
+
+      <p-sidebar-aside>
+        <p-sidebar-panel>
+          <!-- Header -->
+          <header class="sidebar-header">
+            <div class="brand">
+              <div class="brand-icon">M</div>
+              <span class="brand-name">Medical Dashboard</span>
+            </div>
+
+            <button
+              pButton
+              pSidebarTrigger
+              target="preview"
+              severity="secondary"
+              text
+              size="small"
+              class="toggle-btn"
+              type="button"
+              aria-label="Toggle Sidebar"
+            >
+              <i class="pi pi-bars"></i>
+            </button>
+          </header>
+          <!-- Navigation -->
+          <p-sidebar-content>
+            @for (group of navGroups; track group.label) {
+              <p-sidebar-group>
+                @if (group.label) {
+                  <p-sidebar-group-label>
+                    {{ group.label }}
+                  </p-sidebar-group-label>
+                }
+
+                <p-sidebar-group-content>
+                  <p-sidebar-menu>
+                    @for (item of group.items; track item.label) {
+                      <p-sidebar-menu-item>
+                        <button
+                          pSidebarMenuButton
+                          type="button"
+                          class="nav-link"
+                          [routerLink]="item.action ? null : item.route"
+                          (click)="onNavClick(item)"
+                          routerLinkActive="active"
+                          #rla="routerLinkActive"
+                          [isActive]="rla.isActive"
+                          [routerLinkActiveOptions]="{ exact: true }"
+                          [attr.aria-label]="item.label"
+                          [attr.aria-current]="rla.isActive ? 'page' : null"
+                        >
+                          <svg [pIcon]="item.icon"></svg>
+
+                          <span class="nav-label">
+                            {{ item.label }}
+                          </span>
+
+                          @if (rla.isActive && !item.action) {
+                            <span class="active-dot"></span>
+                          }
+                        </button>
+                      </p-sidebar-menu-item>
+                    }
+                  </p-sidebar-menu>
+                </p-sidebar-group-content>
+              </p-sidebar-group>
+            }
+          </p-sidebar-content>
+
+          <!-- Footer -->
+          <p-sidebar-footer>
+            <div class="user-profile">
+              <p-avatar label="JD" shape="circle" class="user-avatar" />
+
+              <div class="user-details">
+                <span class="user-name">John Doe</span>
+                <span class="user-role">Administrator</span>
+              </div>
+            </div>
+          </p-sidebar-footer>
+        </p-sidebar-panel>
+      </p-sidebar-aside>
+    </p-sidebar>
+
+    <!-- Page Content -->
+    <p-sidebar-main>
+      <div class="sidebar-page-content">
+        <ng-content></ng-content>
+      </div>
+    </p-sidebar-main>
+  </p-sidebar-layout>
+</div>

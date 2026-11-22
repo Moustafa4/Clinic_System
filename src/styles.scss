@@ -1,4 +1,12 @@
 @import 'primeicons/primeicons.css';
 body {
   direction: ltr;
+  font-family: 'Almarai';
+}
+@font-face {
+  font-family: 'Almarai';
+  src: url('/Fonts/Almarai-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
 }

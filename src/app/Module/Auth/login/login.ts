@@ -5,6 +5,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { Data } from '../../../core/Services/data';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Core } from '../../../core/Services/core';
+import { AuthService, LoginResponse } from '../../../core/Services/auth-service';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +25,7 @@ export class Login implements OnInit {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private Core = inject(Core);
-
+  private Auth = inject(AuthService);
   ngOnInit(): void {
     this.InitForm();
     this.route.queryParamMap.subscribe((params) => {
@@ -37,33 +38,49 @@ export class Login implements OnInit {
   InitForm(): void {
     this.Form = this.FB.group({
       Email: ['', [Validators.required, Validators.email]],
-      Password: [''],
+      Password: ['', [Validators.required]],
     });
   }
 
   togglePassword(): void {
     this.showPassword = !this.showPassword;
   }
+
   submit(): void {
     if (this.Form.invalid) {
       this.Form.markAllAsTouched();
       return;
     }
 
+    const role = this.selectedRole();
+
+    if (!role) {
+      console.error('No role selected');
+      return;
+    }
+
     const payload = {
       ...this.Form.getRawValue(),
-      Role: this.selectedRole(),
+      Role: role,
     };
-    console.log('Sending payload:', payload);
 
-    this.Data.post<any>('Auth/Login', payload).subscribe({
+    this.Data.post<LoginResponse>('Auth/Login', payload).subscribe({
       next: (res) => {
-        console.log('Login Success:', res);
-        this.Core._Sussess.next('تم تسجيل الدخول بنجاح،مرحبا بعودتك');
+        // 1. Save Token And Role
+        this.Auth.saveAuthData(res);
+
+        // 2. Show Success Message
+        this.Core._Sussess.next('تم تسجيل الدخول بنجاح، مرحبا بعودتك');
+
+        // 3. Navigate To Dashboard
+        this.router.navigate(['/admin-dashboard']);
       },
+
       error: (err) => {
         console.error('Login Error:', err);
+
         console.log('Status:', err.status);
+
         console.log('Response:', err.error);
       },
     });
