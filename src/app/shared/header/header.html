@@ -1,0 +1,84 @@
+<header class="dashboard-header" dir="rtl">
+  <div class="header-right">
+    <!-- Menu Toggle -->
+    <button
+      class="menu-toggle"
+      type="button"
+      (click)="toggleSidebar()"
+      aria-label="فتح القائمة الجانبية"
+    >
+      <i class="pi pi-bars"></i>
+    </button>
+
+    <!-- Logo -->
+    <a class="brand" href="#">
+      <span class="brand-icon">
+        <i class="pi pi-plus"></i>
+      </span>
+
+      <span class="brand-name">
+        <strong>HealthCare</strong>
+        <!-- <span>Clinic</span> -->
+      </span>
+    </a>
+  </div>
+
+  <div class="header-left">
+    <!-- Admin Profile -->
+    <div class="profile-wrapper">
+      <button class="profile-button" type="button" (click)="profileOpen = !profileOpen">
+        <i class="pi pi-chevron-down profile-arrow"></i>
+
+        <div class="profile-image">
+          <img *ngIf="profileImage; else defaultAvatar" [src]="profileImage" alt="Admin" />
+
+          <ng-template #defaultAvatar>
+            <i class="pi pi-user"></i>
+          </ng-template>
+        </div>
+
+        <div class="profile-info">
+          <strong>{{ adminName() }}</strong>
+          <span>
+            <span class="online-dot"></span>
+            {{ adminRole() }}
+          </span>
+        </div>
+      </button>
+
+      @if (profileOpen) {
+        <div class="profile-dropdown">
+          <button type="button">
+            <i class="pi pi-user"></i>
+            الملف الشخصي
+          </button>
+
+          <button type="button">
+            <i class="pi pi-cog"></i>
+            إعدادات الحساب
+          </button>
+
+          <button type="button" class="logout-item" (click)="logout()">
+            <i class="pi pi-sign-out"></i>
+            تسجيل الخروج
+          </button>
+        </div>
+      }
+    </div>
+
+    <span class="header-divider"></span>
+
+    <!-- Notifications -->
+    <button class="header-icon-button notification-button" type="button" aria-label="الإشعارات">
+      <i class="pi pi-bell"></i>
+      <span class="notification-count">3</span>
+    </button>
+
+    <span class="header-divider"></span>
+
+    <!-- Settings -->
+    <button class="header-icon-button" type="button" aria-label="الإعدادات">
+      <i class="pi pi-cog"></i>
+    </button>
+  </div>
+</header>

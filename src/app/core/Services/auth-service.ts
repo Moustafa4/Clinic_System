@@ -47,4 +47,41 @@ export class AuthService {
     this._token.set(null);
     this._role.set(null);
   }
+  // Decode JWT Token
+  private decodeToken(): any {
+    const token = this._token();
+
+    if (!token) return null;
+
+    try {
+      const payload = token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
+
+      return JSON.parse(
+        decodeURIComponent(
+          atob(payload)
+            .split('')
+            .map((c) => '%' + c.charCodeAt(0).toString(16).padStart(2, '0'))
+            .join(''),
+        ),
+      );
+    } catch {
+      return null;
+    }
+  }
+
+  // Decoded User Data
+  userData = computed(() => this.decodeToken());
+
+  // Get User ID
+  userId = computed(() => this.userData()?.sub ?? this.userData()?.nameid);
+
+  // Get Email
+  userEmail = computed(() => this.userData()?.email);
+
+  // Check Token Expiration
+  isTokenExpired = computed(() => {
+    const exp = this.userData()?.exp;
+
+    return !exp || exp * 1000 < Date.now();
+  });
 }

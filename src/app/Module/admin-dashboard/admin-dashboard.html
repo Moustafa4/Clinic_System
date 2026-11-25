@@ -1,4 +1,6 @@
-<app-admin-sidebar>
+<app-admin-sidebar #sidebar>
+  <app-header (sidebarToggle)="sidebar.toggleSidebar()" />
+
   <main class="dashboard-content" dir="rtl">
     <router-outlet></router-outlet>
   </main>

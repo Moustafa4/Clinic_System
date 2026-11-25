@@ -6,6 +6,14 @@
   font-weight: bold;
 }
 
+:host ::ng-deep p-sidebar-panel {
+  background-image: url('/img/login/Soft%20Blue%20Healthcare%20Office%20Background.png') !important;
+
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
 .sidebar-header:has(.toggle-btn[aria-expanded='false']) {
   text-align: center;
 

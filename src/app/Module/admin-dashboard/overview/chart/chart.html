@@ -1,1 +1,70 @@
-<p>chart works!</p>
+<div class="container-fluid dashboard-charts">
+  <div class="row g-3 charts-row" dir="ltr">
+    <!-- Bookings Chart - Left -->
+    <div class="col-lg-6">
+      <div class="chart-card" dir="rtl">
+        <div class="chart-header">
+          <div class="chart-title">
+            <span class="chart-icon">
+              <i class="pi pi-calendar"></i>
+            </span>
+            <h3>إحصائيات الحجوزات</h3>
+          </div>
+
+          <button class="filter-btn">
+            <i class="pi pi-chevron-down"></i>
+            آخر 6 أشهر
+          </button>
+        </div>
+
+        <div class="line-chart-container">
+          <p-chart type="line" [data]="bookingsData" [options]="bookingsOptions" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Clinics Chart - Right -->
+    <div class="col-lg-6">
+      <div class="chart-card" dir="rtl">
+        <div class="chart-header">
+          <div class="chart-title">
+            <span class="chart-icon">
+              <i class="pi pi-chart-pie"></i>
+            </span>
+            <h3>نظرة عامة على العيادات</h3>
+          </div>
+        </div>
+
+        <div class="doughnut-layout">
+          <!-- Legend - Left -->
+          <div class="chart-legend">
+            <div class="legend-item">
+              <span>عيادة الباطنة</span>
+              <span class="legend-dot dot-one"></span>
+            </div>
+
+            <div class="legend-item">
+              <span>عيادة الأطفال</span>
+              <span class="legend-dot dot-two"></span>
+            </div>
+
+            <div class="legend-item">
+              <span>عيادة الأسنان</span>
+              <span class="legend-dot dot-three"></span>
+            </div>
+          </div>
+
+          <!-- Doughnut - Right -->
+          <div class="doughnut-container">
+            <p-chart type="doughnut" [data]="clinicsData" [options]="clinicsOptions" />
+
+            <div class="doughnut-center">
+              <h2>3</h2>
+              <span>عيادات</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

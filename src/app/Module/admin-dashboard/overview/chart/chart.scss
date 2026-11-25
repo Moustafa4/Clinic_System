@@ -1,0 +1,296 @@
+.dashboard-charts {
+  padding: 15px;
+  width: 100%;
+  margin-block-start: 20px;
+}
+
+.charts-row {
+  align-items: stretch;
+}
+
+/* =========================
+   Chart Card
+========================= */
+
+.chart-card {
+  width: 100%;
+  height: 290px;
+  padding: 18px 20px;
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #e3edf7;
+  border-radius: 20px;
+
+  box-shadow: 0 3px 12px rgba(26, 93, 145, 0.07);
+
+  direction: rtl;
+  overflow: hidden;
+}
+
+/* =========================
+   Header
+========================= */
+
+.chart-header {
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 12px;
+  gap: 10px;
+}
+
+.chart-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #123e6d;
+    white-space: nowrap;
+  }
+}
+
+.chart-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  background: #e3f5fd;
+  color: #079ed1;
+
+  font-size: 17px;
+}
+
+/* =========================
+   Filter
+========================= */
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 8px 13px;
+
+  border: 1px solid #dceaf7;
+  border-radius: 25px;
+
+  background: #f8fbff;
+  color: #41658c;
+
+  font-family: inherit;
+  font-size: 12px;
+
+  white-space: nowrap;
+  cursor: pointer;
+
+  i {
+    font-size: 10px;
+  }
+}
+
+/* =========================
+   Line Chart
+========================= */
+
+.line-chart-container {
+  width: 100%;
+  height: 215px;
+  min-height: 215px;
+  position: relative;
+  direction: ltr;
+  overflow: visible;
+}
+
+:host ::ng-deep .line-chart-container p-chart {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+:host ::ng-deep .line-chart-container canvas {
+  display: block;
+}
+
+/* =========================
+   Doughnut Layout
+========================= */
+
+.doughnut-layout {
+  width: 100%;
+  height: 205px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  direction: rtl;
+  gap: 10px;
+}
+
+/* =========================
+   Doughnut
+========================= */
+
+.doughnut-container {
+  width: 190px;
+  height: 190px;
+
+  flex: 0 0 190px;
+
+  position: relative;
+}
+
+.doughnut-center {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  pointer-events: none;
+
+  h2 {
+    color: #123e6d;
+    font-size: 27px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 5px;
+  }
+
+  span {
+    color: #123e6d;
+    font-size: 13px;
+    font-weight: 700;
+  }
+}
+
+/* =========================
+   Legend
+========================= */
+
+.chart-legend {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 22px;
+
+  flex: 1;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+
+  color: #123e6d;
+  font-size: 14px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.legend-dot {
+  width: 14px;
+  height: 14px;
+
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dot-one {
+  background: #1676c5;
+}
+
+.dot-two {
+  background: #2bb9db;
+}
+
+.dot-three {
+  background: #a1d6f4;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 991px) {
+  .chart-card {
+    height: 310px;
+  }
+
+  .doughnut-layout {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .dashboard-charts {
+    padding: 8px;
+  }
+
+  .chart-card {
+    height: auto;
+    min-height: 290px;
+    padding: 15px;
+  }
+
+  .chart-title h3 {
+    font-size: 14px;
+  }
+
+  .line-chart-container {
+    height: 200px;
+  }
+
+  .doughnut-layout {
+    height: 210px;
+    gap: 5px;
+  }
+
+  .doughnut-container {
+    width: 155px;
+    height: 155px;
+    flex-basis: 155px;
+  }
+
+  .legend-item {
+    font-size: 11px;
+    gap: 7px;
+  }
+
+  .legend-dot {
+    width: 11px;
+    height: 11px;
+  }
+
+  .chart-legend {
+    gap: 17px;
+  }
+}
+:host ::ng-deep .line-chart-container canvas,
+:host ::ng-deep .doughnut-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+}

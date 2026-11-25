@@ -123,7 +123,9 @@ export class AdminSidebar implements OnInit, OnDestroy {
       this.open.set(false);
     }
   }
-
+  toggleSidebar(): void {
+    this.open.update((value) => !value);
+  }
   logout(): void {
     this.authService.logout();
 
