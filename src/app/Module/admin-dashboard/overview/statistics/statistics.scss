@@ -2,15 +2,15 @@
   direction: rtl;
 }
 .col-xl-3:last-child .stat-card {
-  margin-inline-end: 100px;
+  margin-inline-end: 0;
 }
 .stat-card {
-  width: 90%;
+  width: 100%;
   min-height: 112px;
   padding: 16px 18px;
 
-  margin-inline-start: 10px;
-  margin-block-start: 50px;
+  margin-inline-start: 0;
+  margin-block-start: 12px;
 
   display: flex;
   align-items: center;
@@ -19,7 +19,7 @@
 
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid #dceafb;
-  border-radius: 19px;
+  border-radius: 16px;
 
   box-shadow: 0 4px 12px rgba(34, 105, 170, 0.08);
   transition: all 0.3s ease;

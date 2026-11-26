@@ -21,7 +21,16 @@
 }
 
 /* Logo */
-
+.brand-icon {
+  font-size: 32px;
+  color: #009eb5;
+  width: 50px;
+  height: 40px;
+  img {
+    width: 50px !important;
+    height: 40px !important  ;
+  }
+}
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -29,11 +38,6 @@
   text-decoration: none;
   color: #07506d;
   flex-shrink: 0;
-
-  .brand-icon {
-    font-size: 32px;
-    color: #009eb5;
-  }
 
   .brand-text {
     display: flex;

@@ -1,17 +1,65 @@
 .brand {
-  //   margin-inline-start: 50px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   font-size: 18px;
   font-weight: bold;
 }
 
 :host ::ng-deep p-sidebar-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  box-sizing: border-box;
   background-image: url('/img/login/Soft%20Blue%20Healthcare%20Office%20Background.png') !important;
 
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
+}
+
+:host ::ng-deep p-sidebar-aside {
+  height: 100dvh;
+}
+
+:host ::ng-deep p-sidebar-content {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding-block-start: 24px;
+}
+
+:host ::ng-deep p-sidebar-footer {
+  flex: 0 0 auto;
+  margin-block-start: auto;
+  padding: 14px 18px 22px;
+  border-top: 1px solid rgba(23, 75, 124, 0.14);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.user-name {
+  color: #174b7c;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.user-role {
+  color: #527397;
+  font-size: 11px;
 }
 
 .sidebar-header:has(.toggle-btn[aria-expanded='false']) {
@@ -30,5 +78,53 @@
 .nav-link {
   font-size: 16px;
   font-weight: bold;
-  margin-block-end: 30px;
+  margin-block-end: 12px;
+  border-radius: 12px !important;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+:host ::ng-deep .nav-link.active {
+  color: #fff !important;
+  background: linear-gradient(110deg, #18bdd0, #0789be) !important;
+  box-shadow: 0 7px 18px rgba(0, 139, 190, 0.28);
+}
+
+:host ::ng-deep .nav-link.active svg,
+:host ::ng-deep .nav-link.active .nav-label {
+  color: #fff !important;
+  fill: #fff;
+}
+
+:host ::ng-deep .nav-link.active .active-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+
+:host ::ng-deep .nav-link:not(.active):hover {
+  color: #087da9 !important;
+  background: rgba(15, 169, 200, 0.12) !important;
+}
+
+@media (max-width: 1023px) {
+  :host ::ng-deep p-sidebar-content {
+    padding-block-start: 60px;
+  }
+
+  :host ::ng-deep p-sidebar[data-collapsible-mode='offcanvas'][data-state='collapsed'] {
+    overflow: hidden;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  :host ::ng-deep p-sidebar-panel {
+    box-shadow: -12px 0 35px rgba(22, 74, 113, 0.18);
+  }
 }

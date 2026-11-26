@@ -1,5 +1,78 @@
 .container-fluid {
-  background: linear-gradient(#00000024), url(/img/login/bg.png);
+  min-height: calc(100dvh - 76px);
+  padding: 24px 30px 20px;
+  background:
+    linear-gradient(135deg, rgba(239, 247, 253, 0.96), rgba(232, 244, 251, 0.86)),
+    url('/img/login/Soft%20Blue%20Healthcare%20Office%20Background.png');
   background-size: cover;
-  // height: 100dvh;
+  background-position: center;
+  direction: rtl;
+  box-sizing: border-box;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.container-fluid::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 150px;
+  background: linear-gradient(145deg, transparent 20%, rgba(0, 166, 214, 0.13) 20.5%, rgba(0, 166, 214, 0.13) 100%);
+  clip-path: polygon(0 52%, 100% 18%, 100% 100%, 0 100%);
+  pointer-events: none;
+}
+
+.overview-heading {
+  position: relative;
+  z-index: 1;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 2px;
+}
+
+.heading-copy {
+  text-align: right;
+}
+
+.heading-copy h1 {
+  margin: 0;
+  color: #123e73;
+  font-size: 26px;
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.heading-copy p {
+  margin: 5px 0 0;
+  color: #4d7499;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.heading-icon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #19a7cf;
+  font-size: 25px;
+  margin-inline-start: 0;
+}
+
+@media (max-width: 991px) {
+  .container-fluid {
+    padding: 18px 12px;
+  }
+
+  .overview-heading {
+    height: 48px;
+  }
+
+  .heading-copy h1 {
+    font-size: 21px;
+  }
 }

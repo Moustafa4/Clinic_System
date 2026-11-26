@@ -38,10 +38,11 @@ export class AdminSidebar implements OnInit, OnDestroy {
 
   private mql?: MediaQueryList;
   private mqlListener?: (e: MediaQueryListEvent) => void;
+  private readonly mobileBreakpoint = '(max-width: 1023px)';
 
   navGroups: NavGroup[] = [
     {
-      label: 'القائمة الرئيسية',
+      label: '',
       items: [
         {
           icon: 'home',
@@ -100,7 +101,7 @@ export class AdminSidebar implements OnInit, OnDestroy {
   ngOnInit(): void {
     if (typeof window === 'undefined') return;
 
-    this.mql = window.matchMedia('(max-width: 1023px)');
+    this.mql = window.matchMedia(this.mobileBreakpoint);
 
     this.isMobile.set(this.mql.matches);
     this.open.set(!this.mql.matches);
@@ -125,6 +126,12 @@ export class AdminSidebar implements OnInit, OnDestroy {
   }
   toggleSidebar(): void {
     this.open.update((value) => !value);
+  }
+
+  closeSidebar(): void {
+    if (this.isMobile()) {
+      this.open.set(false);
+    }
   }
   logout(): void {
     this.authService.logout();
