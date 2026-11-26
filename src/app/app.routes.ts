@@ -18,7 +18,7 @@ export const routes: Routes = [
     path: 'loginpanel',
     loadComponent: () => import('./Componnents/panel/panel').then((m) => m.Panel),
   },
-  {
+  {    
     path: 'register',
     loadComponent: () => import('./Module/Auth/register/register').then((m) => m.Register),
   },
